@@ -4,7 +4,7 @@ I'm Alberto, a Software Engineer who loves working with Data! I was lucky to be 
 
 - Designed, Developed and maintained the data infrastructure used as a foundation for Data Science and Data Analytics
 - Managed data workloads (+1 million daily transactions) of financial data (payments, invoices, etc)
-- Developed a wide variety of data collection scripts and pipelines to populate multiple databases with statistics of global crop production, chemical structures, pesticides, internal chromatographic data, etc.
+- Developed various data collection scripts and pipelines to populate multiple databases with statistics on global crop production, chemical structures, pesticides, internal chromatographic data, etc.
 
 ---
 

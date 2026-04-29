@@ -1,6 +1,6 @@
 ## Hi there! 👋
 
-I'm Alberto — a Data Engineer who cares about clean pipelines, solid architecture, and systems that just don't break. I like working close to the hard problems, mentoring people around me, and building things that last.
+I'm Alberto — a Data Engineer who cares about clean pipelines, solid architecture, and systems that just don't break. I like working close to the hard problems, mentoring people around me, and building things that last. Find me on [LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes).
 
 ---
 
@@ -91,12 +91,6 @@ I'm Alberto — a Data Engineer who cares about clean pipelines, solid architect
 - Collaborated with **Microsoft Germany** on a data-streaming project; performed ETL from source systems into Data Marts
 - Implemented Star and Snowflake schemas and analysed multidimensional data with **OLAP** tools
 - Built dashboards and reports with **Power BI**, **Power Pivot**, and **SQL Server Analysis Services (SSAS)**
-
----
-
-## 🤝 Let’s Connect!
-
-- 💼 [LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes)
 
 ---
 

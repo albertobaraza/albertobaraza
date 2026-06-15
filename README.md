@@ -27,7 +27,7 @@ I'm Alberto, a Data Engineer who cares about clean pipelines, solid architecture
 
 - Led core data engineering initiatives within a lean team. Defining architecture, setting standards, and owning the roadmap end-to-end
 - Built a self-healing, idempotent data layer capable of fully rebuilding from scratch, enabling confident deployments and dramatically reducing failure recovery time
-- Drove cross-functional collaboration with Data Science, ML Engineering, and IT Platform to evolve the data infrastructure, tooling, and platform standards
+- Drove cross-functional collaboration with Data Science, ML Engineering, and IT Platform to evolve the data infrastructure and its standards
 - Mentored the junior engineer on the team
 
 ---

@@ -1,6 +1,6 @@
 ## Hi there! 👋
 
-I'm Alberto — a Data Engineer who cares about clean pipelines, solid architecture, and systems that just don't break. I like working close to the hard problems, mentoring people around me, and building things that last. You can also find me on [LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes).
+I'm Alberto, a Data Engineer who cares about clean pipelines, solid architecture, and systems that just don't break. I like working close to the hard problems, mentoring people around me, and building things that last. You can also find me on [LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes).
 
 ---
 
@@ -71,7 +71,7 @@ I'm Alberto — a Data Engineer who cares about clean pipelines, solid architect
 
 #### Junior Data Analyst *(Oct 2019 – Oct 2020 · Internship)*
 
-- Carried out my Bachelor's thesis here — applied Business Analytics to bio-sustainable techniques and circular economy
+- Carried out my Bachelor's thesis here, applied Business Analytics to bio-sustainable techniques and circular economy
 - Built **Power BI** dashboards for internal use and developed JDBC-based tools for data management between DBMS
 - Worked as SQL programmer writing custom queries using **SAP B1**
 

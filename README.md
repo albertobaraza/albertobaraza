@@ -1,6 +1,6 @@
 ## Hi there! 👋
 
-I'm Alberto, a Data Engineer who cares about clean pipelines, solid architecture, and systems that just don't break. I like working close to the hard problems, mentoring people around me, and building things that last. You can also find me on [LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes).
+I'm Alberto, a Data Engineer who cares about clean pipelines, solid architecture, and systems that just don't break. I like working close to the hard problems, mentoring people around me, and building things that last. Check out my [portfolio](https://albertobaraza.github.io) or find me on [LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes).
 
 ---
 

@@ -1,3 +1,15 @@
+<div align="center">
+
+### [**Explore my interactive portfolio**](https://albertobaraza.github.io)
+
+A more dynamic version of this page, animations, projects, an easter egg and more.
+
+[![Portfolio](https://img.shields.io/badge/🚀_albertobaraza.github.io-Visit_Now-8A2BE2?style=for-the-badge&labelColor=1c1917)](https://albertobaraza.github.io)
+
+</div>
+
+---
+
 ## Hi there! 👋
 
 I'm Alberto, a Data Engineer who cares about clean pipelines, solid architecture, and systems that just don't break. I like working close to the hard problems, mentoring people around me, and building things that last. Check out my [portfolio](https://albertobaraza.github.io) or find me on [LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes).

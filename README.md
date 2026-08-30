@@ -10,10 +10,7 @@ Senior Data Engineer building clean pipelines and systems that don't break (hope
 
 <br>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=albertobaraza&theme=nightowl&hide_border=false" alt="albertobaraza streak"/>
-
-<br>
-
 <img src="./assets/top-langs.svg" alt="Top Languages"/>
+<img src="./assets/recent-repos.svg" alt="Most Active Repos"/>
 
 </div>

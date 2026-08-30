@@ -14,6 +14,6 @@ Senior Data Engineer building clean pipelines and systems that don't break (hope
 
 <br>
 
-<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=albertobaraza&langs_count=10&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en&custom_title=Top%20Languages" alt="Top Languages"/>
+<img src="./assets/top-langs.svg" alt="Top Languages"/>
 
 </div>

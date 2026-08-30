@@ -24,6 +24,10 @@ const EXCLUDE_REPOS = new Set(
     .map((s) => s.trim())
     .filter(Boolean),
 );
+const INCLUDE_ORGS = (process.env.INCLUDE_ORGS ?? "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 const TITLE_COLOR = process.env.TITLE_COLOR ?? "0891b2";
 const TEXT_COLOR = process.env.TEXT_COLOR ?? "ffffff";
@@ -48,16 +52,28 @@ async function gh(url) {
   return res.json();
 }
 
-async function listOwnedRepos() {
+async function listAllPages(url) {
   const repos = [];
   for (let page = 1; ; page++) {
-    const batch = await gh(
-      `${API}/user/repos?per_page=100&page=${page}&affiliation=owner&visibility=all`,
-    );
+    const batch = await gh(`${url}${url.includes("?") ? "&" : "?"}per_page=100&page=${page}`);
     repos.push(...batch);
     if (batch.length < 100) break;
   }
-  return repos.filter((r) => (INCLUDE_FORKS || !r.fork) && !EXCLUDE_REPOS.has(r.name));
+  return repos;
+}
+
+async function listOwnedRepos() {
+  const owned = await listAllPages(`${API}/user/repos?affiliation=owner&visibility=all`);
+  const orgRepos = await Promise.all(
+    INCLUDE_ORGS.map((org) => listAllPages(`${API}/orgs/${org}/repos?type=all`)),
+  );
+
+  const seen = new Map();
+  for (const r of [...owned, ...orgRepos.flat()]) seen.set(r.full_name, r);
+
+  return [...seen.values()].filter(
+    (r) => (INCLUDE_FORKS || !r.fork) && !EXCLUDE_REPOS.has(r.name),
+  );
 }
 
 async function aggregateLanguages(repos) {

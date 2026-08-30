@@ -26,6 +26,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PROFILE_TOKEN }}
           GH_USERNAME: ${{ github.repository_owner }}
+          INCLUDE_ORGS: albertorga
         run: node scripts/generate-top-langs.mjs
 
       - name: Commit and push if changed

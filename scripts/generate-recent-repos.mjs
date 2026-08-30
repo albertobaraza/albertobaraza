@@ -1,12 +1,18 @@
 #!/usr/bin/env node
-// Fetches commit contribution counts per repository for GH_USERNAME over the
-// last DAYS_BACK days (via the GraphQL contributionsCollection API, so private
-// repos count too) and renders an SVG "Most Active Repos" card in the same
-// visual style as top-langs.svg. Run on a schedule by
-// .github/workflows/recent-repos.yml.
+// Fetches commit counts per repository for GH_USERNAME over the last
+// DAYS_BACK days by listing owned repos (REST, same as generate-top-langs.mjs)
+// and querying each one's default-branch commit history directly (GraphQL),
+// so private repos count too. This only requires repo read access, unlike
+// the contributionsCollection API, which is additionally gated by the
+// "Include private contributions on my profile" setting. Renders an SVG
+// "Most Active Repos" card in the same visual style as top-langs.svg. Run
+// on a schedule by .github/workflows/recent-repos.yml.
 
-import { writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const TOKEN = process.env.GH_TOKEN;
 const USERNAME = process.env.GH_USERNAME;
@@ -22,6 +28,10 @@ const EXCLUDE_REPOS = new Set(
     .map((s) => s.trim())
     .filter(Boolean),
 );
+const INCLUDE_ORGS = (process.env.INCLUDE_ORGS ?? "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 const TITLE_COLOR = process.env.TITLE_COLOR ?? "0891b2";
 const TEXT_COLOR = process.env.TEXT_COLOR ?? "ffffff";
@@ -30,34 +40,34 @@ const BG_COLOR = process.env.BG_COLOR ?? "1c1917";
 const HIDE_BORDER = process.env.HIDE_BORDER !== "false";
 const OUT_PATH = process.env.OUT_PATH ?? "assets/recent-repos.svg";
 
-const API = "https://api.github.com/graphql";
+const REST_API = "https://api.github.com";
+const GRAPHQL_API = "https://api.github.com/graphql";
+const BATCH_SIZE = 40;
 
-async function fetchCommitsByRepo(from, to) {
-  const query = `
-    query($from: DateTime!, $to: DateTime!) {
-      viewer {
-        contributionsCollection(from: $from, to: $to) {
-          commitContributionsByRepository(maxRepositories: 100) {
-            repository {
-              name
-              isFork
-              owner { login }
-              primaryLanguage { name color }
-            }
-            contributions { totalCount }
-          }
-        }
-      }
-    }`;
+async function rest(url) {
+  const res = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${TOKEN}`,
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28",
+      "User-Agent": "recent-repos-generator",
+    },
+  });
+  if (!res.ok) {
+    throw new Error(`GitHub API ${res.status} for ${url}: ${await res.text()}`);
+  }
+  return res.json();
+}
 
-  const res = await fetch(API, {
+async function graphql(query, variables) {
+  const res = await fetch(GRAPHQL_API, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${TOKEN}`,
       "Content-Type": "application/json",
       "User-Agent": "recent-repos-generator",
     },
-    body: JSON.stringify({ query, variables: { from, to } }),
+    body: JSON.stringify({ query, variables }),
   });
   if (!res.ok) {
     throw new Error(`GitHub GraphQL API ${res.status}: ${await res.text()}`);
@@ -66,7 +76,69 @@ async function fetchCommitsByRepo(from, to) {
   if (json.errors) {
     throw new Error(`GitHub GraphQL errors: ${JSON.stringify(json.errors)}`);
   }
-  return json.data.viewer.contributionsCollection.commitContributionsByRepository;
+  return json.data;
+}
+
+async function listAllPages(url) {
+  const items = [];
+  for (let page = 1; ; page++) {
+    const batch = await rest(`${url}${url.includes("?") ? "&" : "?"}per_page=100&page=${page}`);
+    items.push(...batch);
+    if (batch.length < 100) break;
+  }
+  return items;
+}
+
+async function listOwnedRepos() {
+  const owned = await listAllPages(`${REST_API}/user/repos?affiliation=owner&visibility=all`);
+  const orgRepos = await Promise.all(
+    INCLUDE_ORGS.map((org) => listAllPages(`${REST_API}/orgs/${org}/repos?type=all`)),
+  );
+
+  const seen = new Map();
+  for (const r of [...owned, ...orgRepos.flat()]) seen.set(r.full_name, r);
+
+  return [...seen.values()].filter(
+    (r) => (INCLUDE_FORKS || !r.fork) && !EXCLUDE_REPOS.has(r.name),
+  );
+}
+
+function chunk(arr, size) {
+  const out = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+}
+
+async function fetchCommitCounts(repos, authorId, from, to) {
+  const counts = new Map();
+
+  for (const batch of chunk(repos, BATCH_SIZE)) {
+    const fields = batch
+      .map(
+        (r, i) => `r${i}: repository(owner: ${JSON.stringify(r.owner.login)}, name: ${JSON.stringify(r.name)}) {
+          defaultBranchRef {
+            target {
+              ... on Commit {
+                history(since: $from, until: $to, author: { id: $authorId }) {
+                  totalCount
+                }
+              }
+            }
+          }
+        }`,
+      )
+      .join("\n");
+
+    const query = `query($from: GitTimestamp!, $to: GitTimestamp!, $authorId: ID!) {\n${fields}\n}`;
+    const data = await graphql(query, { from, to, authorId });
+
+    batch.forEach((r, i) => {
+      const count = data[`r${i}`]?.defaultBranchRef?.target?.history?.totalCount ?? 0;
+      if (count > 0) counts.set(r.full_name, count);
+    });
+  }
+
+  return counts;
 }
 
 function truncate(name, maxChars = 28) {
@@ -123,32 +195,33 @@ function escapeXml(s) {
 }
 
 async function main() {
+  const colorMap = JSON.parse(await readFile(path.join(__dirname, "language-colors.json"), "utf8"));
+
   const to = new Date();
   const from = new Date(to.getTime() - DAYS_BACK * 24 * 60 * 60 * 1000);
 
-  const byRepo = await fetchCommitsByRepo(from.toISOString(), to.toISOString());
+  const [repos, me] = await Promise.all([listOwnedRepos(), rest(`${REST_API}/user`)]);
+  const counts = await fetchCommitCounts(repos, me.node_id, from.toISOString(), to.toISOString());
+  const reposByFullName = new Map(repos.map((r) => [r.full_name, r]));
 
-  const repos = byRepo
-    .filter(
-      (r) =>
-        r.repository.owner.login.toLowerCase() === USERNAME.toLowerCase() &&
-        (INCLUDE_FORKS || !r.repository.isFork) &&
-        !EXCLUDE_REPOS.has(r.repository.name),
-    )
-    .map((r) => ({
-      name: r.repository.name,
-      count: r.contributions.totalCount,
-      color: r.repository.primaryLanguage?.color ?? hashColor(r.repository.name),
-    }))
+  const result = [...counts.entries()]
+    .map(([fullName, count]) => {
+      const r = reposByFullName.get(fullName);
+      return {
+        name: r.name,
+        count,
+        color: (r.language && colorMap[r.language]) ?? hashColor(r.name),
+      };
+    })
     .sort((a, b) => b.count - a.count)
     .slice(0, REPOS_COUNT);
 
-  const svg = renderSvg(repos, DAYS_BACK);
+  const svg = renderSvg(result, DAYS_BACK);
 
   const outPath = path.join(process.cwd(), OUT_PATH);
   await mkdir(path.dirname(outPath), { recursive: true });
   await writeFile(outPath, svg);
-  console.log(`Wrote ${outPath} from ${repos.length} repos (last ${DAYS_BACK} days).`);
+  console.log(`Wrote ${outPath} from ${result.length} repos (last ${DAYS_BACK} days).`);
 }
 
 main().catch((err) => {

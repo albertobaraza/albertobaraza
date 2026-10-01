@@ -6,7 +6,7 @@ Senior Data Engineer. Currently building pipelines and systems that don't break 
 
 [![Portfolio](https://img.shields.io/badge/🚀_albertobaraza.github.io-Visit_Now-8A2BE2?style=for-the-badge&labelColor=1c1917)](https://albertobaraza.github.io)
 
-[LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes) · [Email](mailto:albertoww02@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/alberto-baraza-barnes) &nbsp;&nbsp;·&nbsp;&nbsp; [Email](mailto:albertoww02@gmail.com)
 
 <br>
 

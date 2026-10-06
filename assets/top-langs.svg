@@ -9,71 +9,71 @@
     <g transform="translate(25, 55)">
       <circle cx="5" cy="6" r="5" fill="#3178c6"/>
       <text x="18" y="10" class="lang-name">TypeScript</text>
-      <text x="250" y="10" class="lang-percent" text-anchor="end">37.2%</text>
+      <text x="250" y="10" class="lang-percent" text-anchor="end">36.8%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="93.05" height="6" rx="3" fill="#3178c6"/>
+      <rect x="0" y="20" width="91.99" height="6" rx="3" fill="#3178c6"/>
     </g>
     <g transform="translate(25, 95)">
       <circle cx="5" cy="6" r="5" fill="#3572A5"/>
       <text x="18" y="10" class="lang-name">Python</text>
-      <text x="250" y="10" class="lang-percent" text-anchor="end">17.3%</text>
+      <text x="250" y="10" class="lang-percent" text-anchor="end">17.4%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="43.35" height="6" rx="3" fill="#3572A5"/>
+      <rect x="0" y="20" width="43.60" height="6" rx="3" fill="#3572A5"/>
     </g>
     <g transform="translate(25, 135)">
       <circle cx="5" cy="6" r="5" fill="#e34c26"/>
       <text x="18" y="10" class="lang-name">HTML</text>
-      <text x="250" y="10" class="lang-percent" text-anchor="end">13.4%</text>
+      <text x="250" y="10" class="lang-percent" text-anchor="end">13.2%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="33.49" height="6" rx="3" fill="#e34c26"/>
+      <rect x="0" y="20" width="33.09" height="6" rx="3" fill="#e34c26"/>
     </g>
     <g transform="translate(25, 175)">
       <circle cx="5" cy="6" r="5" fill="#DA5B0B"/>
       <text x="18" y="10" class="lang-name">Jupyter Notebook</text>
-      <text x="250" y="10" class="lang-percent" text-anchor="end">11.8%</text>
+      <text x="250" y="10" class="lang-percent" text-anchor="end">11.7%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="29.51" height="6" rx="3" fill="#DA5B0B"/>
+      <rect x="0" y="20" width="29.16" height="6" rx="3" fill="#DA5B0B"/>
     </g>
     <g transform="translate(25, 215)">
       <circle cx="5" cy="6" r="5" fill="#89e051"/>
       <text x="18" y="10" class="lang-name">Shell</text>
-      <text x="250" y="10" class="lang-percent" text-anchor="end">6.4%</text>
+      <text x="250" y="10" class="lang-percent" text-anchor="end">7.2%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="15.98" height="6" rx="3" fill="#89e051"/>
+      <rect x="0" y="20" width="17.95" height="6" rx="3" fill="#89e051"/>
     </g>
     <g transform="translate(25, 255)">
       <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
       <text x="18" y="10" class="lang-name">JavaScript</text>
-      <text x="250" y="10" class="lang-percent" text-anchor="end">4.6%</text>
+      <text x="250" y="10" class="lang-percent" text-anchor="end">4.5%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="11.43" height="6" rx="3" fill="#f1e05a"/>
+      <rect x="0" y="20" width="11.30" height="6" rx="3" fill="#f1e05a"/>
     </g>
     <g transform="translate(25, 295)">
       <circle cx="5" cy="6" r="5" fill="#198CE7"/>
       <text x="18" y="10" class="lang-name">R</text>
       <text x="250" y="10" class="lang-percent" text-anchor="end">3.4%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="8.61" height="6" rx="3" fill="#198CE7"/>
+      <rect x="0" y="20" width="8.51" height="6" rx="3" fill="#198CE7"/>
     </g>
     <g transform="translate(25, 335)">
       <circle cx="5" cy="6" r="5" fill="#563d7c"/>
       <text x="18" y="10" class="lang-name">CSS</text>
       <text x="250" y="10" class="lang-percent" text-anchor="end">3.0%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="7.49" height="6" rx="3" fill="#563d7c"/>
+      <rect x="0" y="20" width="7.40" height="6" rx="3" fill="#563d7c"/>
     </g>
     <g transform="translate(25, 375)">
       <circle cx="5" cy="6" r="5" fill="#e16737"/>
       <text x="18" y="10" class="lang-name">MATLAB</text>
-      <text x="250" y="10" class="lang-percent" text-anchor="end">2.5%</text>
+      <text x="250" y="10" class="lang-percent" text-anchor="end">2.4%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="6.15" height="6" rx="3" fill="#e16737"/>
+      <rect x="0" y="20" width="6.07" height="6" rx="3" fill="#e16737"/>
     </g>
     <g transform="translate(25, 415)">
       <circle cx="5" cy="6" r="5" fill="#384d54"/>
       <text x="18" y="10" class="lang-name">Dockerfile</text>
       <text x="250" y="10" class="lang-percent" text-anchor="end">0.4%</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="0.93" height="6" rx="3" fill="#384d54"/>
+      <rect x="0" y="20" width="0.92" height="6" rx="3" fill="#384d54"/>
     </g>
 </svg>

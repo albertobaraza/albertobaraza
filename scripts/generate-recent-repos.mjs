@@ -19,7 +19,7 @@ const USERNAME = process.env.GH_USERNAME;
 if (!TOKEN) throw new Error("GH_TOKEN env var is required");
 if (!USERNAME) throw new Error("GH_USERNAME env var is required");
 
-const REPOS_COUNT = Number(process.env.REPOS_COUNT ?? 5);
+const REPOS_COUNT = Number(process.env.REPOS_COUNT ?? 10);
 const DAYS_BACK = Number(process.env.DAYS_BACK ?? 180);
 const INCLUDE_FORKS = process.env.INCLUDE_FORKS === "true";
 const EXCLUDE_REPOS = new Set(

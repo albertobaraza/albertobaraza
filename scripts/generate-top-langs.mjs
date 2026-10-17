@@ -31,6 +31,7 @@ const INCLUDE_ORGS = (process.env.INCLUDE_ORGS ?? "")
 
 const TITLE_COLOR = process.env.TITLE_COLOR ?? "0891b2";
 const TEXT_COLOR = process.env.TEXT_COLOR ?? "ffffff";
+const SUBTITLE_COLOR = process.env.SUBTITLE_COLOR ?? "a8a29e";
 const BG_COLOR = process.env.BG_COLOR ?? "1c1917";
 const HIDE_BORDER = process.env.HIDE_BORDER !== "false";
 const OUT_PATH = process.env.OUT_PATH ?? "assets/top-langs.svg";
@@ -99,7 +100,7 @@ function hashColor(name) {
 function renderSvg(topLangs, colorMap) {
   const width = 300;
   const rowHeight = 40;
-  const top = 55;
+  const top = 70;
   const height = top + topLangs.length * rowHeight + 15;
   const barWidth = width - 50;
 
@@ -125,10 +126,12 @@ function renderSvg(topLangs, colorMap) {
   return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Top Languages">
   <style>
     .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #${TITLE_COLOR}; }
+    .subtitle { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #${SUBTITLE_COLOR}; }
     .lang-name, .lang-percent { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #${TEXT_COLOR}; }
   </style>
   <rect x="0.5" y="0.5" rx="4.5" width="${width - 1}" height="${height - 1}" fill="#${BG_COLOR}" stroke="#e4e2e2" stroke-opacity="${HIDE_BORDER ? 0 : 1}"/>
   <text x="25" y="35" class="header">Top Languages</text>
+  <text x="25" y="53" class="subtitle">bytes of code, all repos</text>
   ${rows}
 </svg>
 `;

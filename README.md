@@ -2,7 +2,7 @@
 
 ### Hi there! I'm Alberto 👋
 
-Senior Data Engineer. Currently building pipelines and systems that don't break (hopefully).
+I spend my days wrangling data for a living, and my evenings building random stuff.
 
 [![Portfolio](https://img.shields.io/badge/🚀_albertobaraza.github.io-Visit_Now-8A2BE2?style=for-the-badge&labelColor=1c1917)](https://albertobaraza.github.io)
 

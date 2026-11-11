@@ -11,7 +11,7 @@
     <g transform="translate(25, 70)">
       <circle cx="5" cy="6" r="5" fill="#3178c6"/>
       <text x="18" y="10" class="repo-name">goblin-street</text>
-      <text x="250" y="10" class="repo-count" text-anchor="end">506</text>
+      <text x="250" y="10" class="repo-count" text-anchor="end">643</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
       <rect x="0" y="20" width="250.00" height="6" rx="3" fill="#3178c6"/>
     </g>
@@ -20,62 +20,62 @@
       <text x="18" y="10" class="repo-name">build-your-story</text>
       <text x="250" y="10" class="repo-count" text-anchor="end">271</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="133.89" height="6" rx="3" fill="#3178c6"/>
+      <rect x="0" y="20" width="105.37" height="6" rx="3" fill="#3178c6"/>
     </g>
     <g transform="translate(25, 150)">
       <circle cx="5" cy="6" r="5" fill="#3178c6"/>
       <text x="18" y="10" class="repo-name">flashback</text>
-      <text x="250" y="10" class="repo-count" text-anchor="end">184</text>
+      <text x="250" y="10" class="repo-count" text-anchor="end">182</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="90.91" height="6" rx="3" fill="#3178c6"/>
+      <rect x="0" y="20" width="70.76" height="6" rx="3" fill="#3178c6"/>
     </g>
     <g transform="translate(25, 190)">
       <circle cx="5" cy="6" r="5" fill="#3178c6"/>
       <text x="18" y="10" class="repo-name">what-the-bill</text>
       <text x="250" y="10" class="repo-count" text-anchor="end">174</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="85.97" height="6" rx="3" fill="#3178c6"/>
+      <rect x="0" y="20" width="67.65" height="6" rx="3" fill="#3178c6"/>
     </g>
     <g transform="translate(25, 230)">
+      <circle cx="5" cy="6" r="5" fill="#3178c6"/>
+      <text x="18" y="10" class="repo-name">tapeo-dev</text>
+      <text x="250" y="10" class="repo-count" text-anchor="end">110</text>
+      <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
+      <rect x="0" y="20" width="42.77" height="6" rx="3" fill="#3178c6"/>
+    </g>
+    <g transform="translate(25, 270)">
+      <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
+      <text x="18" y="10" class="repo-name">claude-limits-meter</text>
+      <text x="250" y="10" class="repo-count" text-anchor="end">102</text>
+      <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
+      <rect x="0" y="20" width="39.66" height="6" rx="3" fill="#f1e05a"/>
+    </g>
+    <g transform="translate(25, 310)">
       <circle cx="5" cy="6" r="5" fill="#3178c6"/>
       <text x="18" y="10" class="repo-name">bling-bling</text>
       <text x="250" y="10" class="repo-count" text-anchor="end">72</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="35.57" height="6" rx="3" fill="#3178c6"/>
+      <rect x="0" y="20" width="27.99" height="6" rx="3" fill="#3178c6"/>
     </g>
-    <g transform="translate(25, 270)">
+    <g transform="translate(25, 350)">
       <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
       <text x="18" y="10" class="repo-name">whack-a-mole</text>
       <text x="250" y="10" class="repo-count" text-anchor="end">66</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="32.61" height="6" rx="3" fill="#f1e05a"/>
+      <rect x="0" y="20" width="25.66" height="6" rx="3" fill="#f1e05a"/>
     </g>
-    <g transform="translate(25, 310)">
+    <g transform="translate(25, 390)">
+      <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
+      <text x="18" y="10" class="repo-name">albertobaraza.github.io</text>
+      <text x="250" y="10" class="repo-count" text-anchor="end">60</text>
+      <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
+      <rect x="0" y="20" width="23.33" height="6" rx="3" fill="#f1e05a"/>
+    </g>
+    <g transform="translate(25, 430)">
       <circle cx="5" cy="6" r="5" fill="#89e051"/>
       <text x="18" y="10" class="repo-name">claude</text>
       <text x="250" y="10" class="repo-count" text-anchor="end">54</text>
       <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="26.68" height="6" rx="3" fill="#89e051"/>
-    </g>
-    <g transform="translate(25, 350)">
-      <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
-      <text x="18" y="10" class="repo-name">albertobaraza.github.io</text>
-      <text x="250" y="10" class="repo-count" text-anchor="end">53</text>
-      <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="26.19" height="6" rx="3" fill="#f1e05a"/>
-    </g>
-    <g transform="translate(25, 390)">
-      <circle cx="5" cy="6" r="5" fill="#89e051"/>
-      <text x="18" y="10" class="repo-name">my-gcp</text>
-      <text x="250" y="10" class="repo-count" text-anchor="end">31</text>
-      <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="15.32" height="6" rx="3" fill="#89e051"/>
-    </g>
-    <g transform="translate(25, 430)">
-      <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
-      <text x="18" y="10" class="repo-name">albertobaraza</text>
-      <text x="250" y="10" class="repo-count" text-anchor="end">25</text>
-      <rect x="0" y="20" width="250" height="6" rx="3" fill="#2f2b28"/>
-      <rect x="0" y="20" width="12.35" height="6" rx="3" fill="#f1e05a"/>
+      <rect x="0" y="20" width="21.00" height="6" rx="3" fill="#89e051"/>
     </g>
 </svg>
